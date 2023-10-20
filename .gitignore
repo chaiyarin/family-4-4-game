@@ -5,6 +5,7 @@ Client/dist
 Client/tmp
 Client/out-tsc
 Client/bazel-out
+Server/node_modules
 
 # Node
 Client/node_modules
