@@ -13,6 +13,8 @@ export class AdminComponent {
   title = 'angular-socketio-demo';
   socket;
   message: string = '';
+  scoreTeamA: number = 0;
+  scoreTeamB: number = 0;
 
   constructor() {
     console.log(this.question);
@@ -41,5 +43,14 @@ export class AdminComponent {
 
   incorrectData() {
     this.socket.emit('send-incorrect-answer', { data: true });
+  }
+
+  sendPoint() {
+    this.socket.emit('send-send-point-team', {
+      data: {
+        scoreTeamA: this.scoreTeamA,
+        scoreTeamB: this.scoreTeamB
+      }
+    });
   }
 }

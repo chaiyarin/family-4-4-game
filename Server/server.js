@@ -39,9 +39,14 @@ io.on('connection', (socket) => {
         io.emit('receive-incorrect-answer', data);
     });
 
+    socket.on('send-send-point-team', (data) => {
+        io.emit('receive-send-point-team', data);
+    });
+
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
+
 });
 
 server.listen(3000, () => {

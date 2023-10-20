@@ -9,6 +9,17 @@
 <button (click)="sendDisplay(0)">RESET</button>
 <button (click)="resetPlayer()">Reset Player</button>
 <button (click)="incorrectData()">ผิดจ้าาาาาา</button>
+<div>
+    Team A: 
+    <input type="text" [(ngModel)]="scoreTeamA" placeholder="Score Team A">
+</div>
+<div>
+    Team B: 
+    <input type="text" [(ngModel)]="scoreTeamB" placeholder="Score Team B">
+</div>
+<div>
+    <button (click)="sendPoint()">ส่งคะแนน</button>
+</div>
 
 <div *ngIf="question">
     <div>

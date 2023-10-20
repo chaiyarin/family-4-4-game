@@ -14,6 +14,8 @@ export class HomeComponent {
   teamWinner: string = '';
   socket;
   message: string = '';
+  scoreTeamA: number = 0;
+  scoreTeamB: number = 0;
 
   constructor() {
     this.socket = io('http://localhost:3000');
@@ -45,6 +47,11 @@ export class HomeComponent {
     this.socket.on('receive-race-speed', (result) => {
       console.log(result.data);
       this.teamWinner = result.data;
+    });
+
+    this.socket.on('receive-send-point-team', (result) => {
+      this.scoreTeamA = result.data.scoreTeamA;
+      this.scoreTeamB = result.data.scoreTeamB;
     });
   }
 
