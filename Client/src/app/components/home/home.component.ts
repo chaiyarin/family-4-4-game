@@ -20,19 +20,19 @@ export class HomeComponent {
 
     this.socket.on('receive-display', (result) => {
       this.questionHiddens = [];
-      for (let i = 0; i < this.question.choices.lenght; i++) {
-        this.questionHiddens.push(false);
-      }
       console.log(result);
       if (result.data === 1) {
         this.question = (question1 as any).default;
         console.log(this.question);
       }
+      for (let i = 0; i < this.question.choices.lenght; i++) {
+        this.questionHiddens.push(false);
+      }
     });
 
     this.socket.on('receive-open-answer', (result) => {
-      console.log(result);
-      this.message = result.data.data;
+      console.log('เปิดคำตอบ', result);
+      this.questionHiddens[result.data] = true;
     });
   }
 

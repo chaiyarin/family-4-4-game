@@ -20,6 +20,10 @@ export class AdminComponent {
   }
 
   sendDisplay(questionNumber: number) {
+    if (questionNumber === 1) {
+      this.question = (question1 as any).default;
+      console.log(this.question);
+    }
     console.log('แสดงคำถาม', questionNumber)
     this.socket.emit('send-display', { data: questionNumber });
   }
