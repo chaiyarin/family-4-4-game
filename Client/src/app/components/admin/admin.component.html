@@ -1,0 +1,20 @@
+<title>Admin</title>
+<button (click)="sendDisplay(1)">ข้อ 1</button>
+<button>ข้อ 2</button>
+<button>ข้อ 3</button>
+<button>ข้อ 4</button>
+<button>ข้อ 5</button>
+<button>ข้อ 6</button>
+<button>ข้อ 7</button>
+
+<div *ngIf="question">
+    <div>
+        <h1>{{ question.question }}</h1>
+    </div>
+    <div *ngFor="let q of question.choices; index as i;">
+        <div>
+            {{ q.answer }}
+            <button (click)="sendOpenAnswer(i)">เปิดป้าย</button>
+        </div>
+    </div>
+</div>
