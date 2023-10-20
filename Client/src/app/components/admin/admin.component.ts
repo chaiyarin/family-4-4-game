@@ -16,7 +16,7 @@ export class AdminComponent {
 
   constructor() {
     console.log(this.question);
-    this.socket = io('https://e02a-183-88-226-220.ngrok-free.app');
+    this.socket = io('http://localhost:3000');
   }
 
   sendDisplay(questionNumber: number) {
