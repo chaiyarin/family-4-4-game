@@ -35,6 +35,10 @@ io.on('connection', (socket) => {
         io.emit('receive-race-speed', data);
     });
 
+    socket.on('send-incorrect-answer', (data) => {
+        io.emit('receive-incorrect-answer', data);
+    });
+
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });

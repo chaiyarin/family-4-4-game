@@ -37,6 +37,11 @@ export class HomeComponent {
       console.log('เปิดคำตอบ', result);
       this.questionHiddens[result.data] = true;
     });
+
+    this.socket.on('receive-incorrect-answer', (result) => {
+      alert('ผิดจ้า');
+    });
+
   }
 
 }

@@ -38,4 +38,8 @@ export class AdminComponent {
   resetPlayer() {
     this.socket.emit('send-race-speed', { data: '000000000' });
   }
+
+  incorrectData() {
+    this.socket.emit('send-incorrect-answer', { data: true });
+  }
 }
