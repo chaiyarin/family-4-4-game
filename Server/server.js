@@ -20,9 +20,14 @@ const io = socketIo(server, {
 io.on('connection', (socket) => {
     console.log('a user connected');
 
-    socket.on('send-hello', (data) => {
+    socket.on('send-display', (data) => {
         console.log(data);
-        io.emit('receive-hello', { data: data });
+        io.emit('receive-display', data);
+    });
+
+    socket.on('send-open-answer', (data) => {
+        console.log(data);
+        io.emit('receive-open-answer', data);
     });
 
     socket.on('disconnect', () => {
