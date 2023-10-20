@@ -16,6 +16,11 @@ export class TeamAComponent {
     this.socket = io('http://localhost:3000');
 
     this.socket.on('receive-race-speed', (result) => {
+      console.log(result.data);
+      if (result.data === '000000000') {
+        this.isShow = true;
+        return;
+      }
       console.log('Hide Button');
       this.message = result.data;
       this.isShow = false;

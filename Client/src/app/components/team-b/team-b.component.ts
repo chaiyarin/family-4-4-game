@@ -15,7 +15,11 @@ export class TeamBComponent {
     this.socket = io('http://localhost:3000');
 
     this.socket.on('receive-race-speed', (result) => {
-      console.log('Hide Button');
+      console.log(result.data);
+      if (result.data === '000000000') {
+        this.isShow = true;
+        return;
+      }
       this.message = result.data;
       this.isShow = false;
     });

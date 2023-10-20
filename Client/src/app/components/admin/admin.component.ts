@@ -34,4 +34,8 @@ export class AdminComponent {
   sendOpenAnswer(answerNumber: number) {
     this.socket.emit('send-open-answer', { data: answerNumber });
   }
+
+  resetPlayer() {
+    this.socket.emit('send-race-speed', { data: '000000000' });
+  }
 }
