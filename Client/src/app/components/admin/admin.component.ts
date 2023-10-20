@@ -20,6 +20,9 @@ export class AdminComponent {
   }
 
   sendDisplay(questionNumber: number) {
+    if (questionNumber === 0) {
+      this.question = null;
+    }
     if (questionNumber === 1) {
       this.question = (question1 as any).default;
       console.log(this.question);

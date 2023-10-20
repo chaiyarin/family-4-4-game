@@ -21,6 +21,9 @@ export class HomeComponent {
     this.socket.on('receive-display', (result) => {
       this.questionHiddens = [];
       console.log(result);
+      if (result.data === 0) {
+        this.question = null;
+      }
       if (result.data === 1) {
         this.question = (question1 as any).default;
         console.log(this.question);
