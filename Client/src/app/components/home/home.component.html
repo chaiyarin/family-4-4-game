@@ -10,3 +10,9 @@
         {{ !questionHiddens[i] ? '-' : choice.answer + ' ' + choice.point}}
     </div>
 </div>
+
+<div *ngIf="teamWinner === 'Team A' || teamWinner === 'Team B'">
+    <h1>
+        {{ teamWinner }}
+    </h1>
+</div>

@@ -11,7 +11,7 @@ export class HomeComponent {
 
   question: any;
   questionHiddens: boolean[] = []
-  title = 'angular-socketio-demo';
+  teamWinner: string = '';
   socket;
   message: string = '';
 
@@ -42,6 +42,10 @@ export class HomeComponent {
       alert('ผิดจ้า');
     });
 
+    this.socket.on('receive-race-speed', (result) => {
+      console.log(result.data);
+      this.teamWinner = result.data;
+    });
   }
 
 }
