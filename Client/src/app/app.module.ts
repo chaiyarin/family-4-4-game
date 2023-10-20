@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { FormsModule } from '@angular/forms';
+import { TeamAComponent } from './components/team-a/team-a.component';
+import { TeamBComponent } from './components/team-b/team-b.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    TeamAComponent,
+    TeamBComponent
   ],
   imports: [
     BrowserModule,

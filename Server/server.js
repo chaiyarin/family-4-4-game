@@ -30,6 +30,11 @@ io.on('connection', (socket) => {
         io.emit('receive-open-answer', data);
     });
 
+    socket.on('send-race-speed', (data) => {
+        console.log(data);
+        io.emit('receive-race-speed', data);
+    });
+
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });

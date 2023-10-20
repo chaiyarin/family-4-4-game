@@ -1,0 +1,29 @@
+import { Component } from '@angular/core';
+import { io } from 'socket.io-client';
+
+@Component({
+  selector: 'app-team-a',
+  templateUrl: './team-a.component.html',
+  styleUrls: ['./team-a.component.css']
+})
+export class TeamAComponent {
+
+  isShow: boolean = true;
+  message: string = '';
+  socket;
+
+  constructor() {
+    this.socket = io('http://localhost:3000');
+
+    this.socket.on('receive-race-speed', (result) => {
+      console.log('Hide Button');
+      this.message = result.data;
+      this.isShow = false;
+    });
+  }
+
+  sendRaceSpeed() {
+    console.log('TEAM A PUSH');
+    this.socket.emit('send-race-speed', { data: 'Team A' });
+  }
+}
