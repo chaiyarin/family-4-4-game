@@ -1,14 +1,31 @@
 import { Component } from '@angular/core';
 import { io } from 'socket.io-client';
 import * as question1 from './../../../assets/questions/question-1.json';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [
+    trigger('flipState', [
+      state('active', style({
+        transform: 'rotateX(180deg)'
+      })),
+      state('inactive', style({
+        transform: 'rotateX(0)'
+      })),
+      transition('active => inactive', animate('500ms ease-out')),
+      transition('inactive => active', animate('500ms ease-in'))
+    ])
+  ]  
 })
 export class HomeComponent {
+  flip: string = 'inactive';
 
+  toggleFlip() {
+    this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+  }
   question: any;
   questionHiddens: boolean[] = []
   teamWinner: string = '';
@@ -16,6 +33,8 @@ export class HomeComponent {
   message: string = '';
   scoreTeamA: number = 0;
   scoreTeamB: number = 0;
+  teamAWrongAnswers: [] = [];
+  teamBWrongAnswers: [] = [];
 
   constructor() {
     this.socket = io('http://localhost:3000');

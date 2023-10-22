@@ -5,6 +5,12 @@
 <div>
     Team A = {{ scoreTeamA }} : Team B = {{ scoreTeamB }}
 </div>
+<div>
+    Team A <span>X</span><span>X</span><span>X</span>
+</div>
+<div>
+    Team B <span>X</span><span>X</span><span>X</span>
+</div>
 <div *ngIf="question">
     <div>
         <h1>{{ question.question }}</h1>
@@ -19,3 +25,31 @@
         {{ teamWinner }}
     </h1>
 </div>
+
+<div class="number-button">
+    <span>1</span>
+</div>
+
+<div class="button-container">
+    <span class="text-left">ภาษา</span>
+    <span class="text-right">40</span>
+</div>
+
+<div class="flip-container" (click)="toggleFlip()">
+    <div class="card" [@flipState]="flip">
+      <div class="card-face card-face-front">
+        <div class="number-button">
+          <span>1</span>
+        </div>
+      </div>
+      <div class="card-face card-face-back">
+        <div class="button-container">
+          <span class="text-left">ภาษา</span>
+          <span class="text-right">40</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+

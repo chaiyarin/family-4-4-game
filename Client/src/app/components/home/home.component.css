@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+.number-button {
+    width: 180px;
+    height: 60px;
+    background: linear-gradient(to top, #ff6b6b, #ff9999);
+    border-radius: 10px;
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-button span {
+    font-size: 2em;
+    background-color: #0099ff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.button-container {
+    width: 240px;
+    height: 70px;
+    background: linear-gradient(to bottom, #0077cc, #0099ff);
+    border-radius: 15px;
+    border: 2px solid #ff66cc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 1.2em;
+}
+
+.text-left {
+    flex: 2;
+    text-align: left;
+}
+
+.text-right {
+    flex: 1;
+    text-align: right;
+}
+
+.flip-container {
+    perspective: 1500px;
+  }
+  
+  .card {
+    width: 240px;
+    height: 70px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transition: transform 0.5s;
+  }
+  
+  .card-face {
+    position: absolute;
+    width: 240px;
+    height: 70px;
+    backface-visibility: hidden;
+  }
+  
+  .card-face-front {
+    z-index: 2;
+  }
+  
+  .card-face-back {
+    transform: rotateX(180deg);
+  }
+  
+  
