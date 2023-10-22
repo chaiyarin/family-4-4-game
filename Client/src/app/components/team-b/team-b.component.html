@@ -1,5 +1,8 @@
-<button *ngIf="isShow" (click)="sendRaceSpeed()">กดเดี๋ยวนี้</button>
+<title>TEAM B</title>
+<div *ngIf="!isShow" style="font-size: 50px; text-align: center;">
+    <h1>{{ message }} ได้เล่นก่อน</h1>
+</div>
 
-<div *ngIf="!isShow" >
-    <h1>{{ message }}</h1>
+<div *ngIf="isShow" (click)="sendRaceSpeed()" class="full-screen">
+    เอานิ้ววางบนจอเมื่อพร้อม
 </div>
