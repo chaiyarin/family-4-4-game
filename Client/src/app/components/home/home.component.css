@@ -1,13 +1,29 @@
-body {
+.flex-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: black;
+    flex-direction: row;
 }
 
+.flex-a-team {
+    background-color: #FF8A80;
+    color: black;
+    width: 50%;
+    text-align: left;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.flex-b-team {
+    background-color: #BBDEFB;
+    color: black;
+    width: 50%;
+    text-align: right;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
 .number-button {
-    width: 180px;
+    width: 100%;
     height: 60px;
     background: linear-gradient(to top, #ff6b6b, #ff9999);
     border-radius: 10px;
@@ -32,7 +48,6 @@ body {
 
 
 .button-container {
-    width: 240px;
     height: 70px;
     background: linear-gradient(to bottom, #0077cc, #0099ff);
     border-radius: 15px;
@@ -55,32 +70,46 @@ body {
     text-align: right;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* ensure it takes full width */
+    flex-wrap: wrap;
+    /* allow it put a bit of space between the items */
+}
+
 .flip-container {
     perspective: 1500px;
-  }
-  
-  .card {
-    width: 240px;
+    display: inline-block;
+    /* Add this line */
+    margin-right: 20px;
+    /* Add a bit of space between cards, adjust as needed */
+    width: 47%;
+    /* adjust this to your preference */
+}
+
+.card {
+    width: 100%;
     height: 70px;
     position: relative;
     transform-style: preserve-3d;
     transform-origin: center center;
     transition: transform 0.5s;
-  }
-  
-  .card-face {
+}
+
+.card-face {
     position: absolute;
-    width: 240px;
+    width: 100%;
     height: 70px;
     backface-visibility: hidden;
-  }
-  
-  .card-face-front {
+}
+
+.card-face-front {
     z-index: 2;
-  }
-  
-  .card-face-back {
+}
+
+.card-face-back {
     transform: rotateX(180deg);
-  }
-  
-  
+}

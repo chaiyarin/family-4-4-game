@@ -21,11 +21,11 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]  
 })
 export class HomeComponent {
-  flip: string = 'inactive';
+  flipStates: string[] = ['inactive', 'inactive'];
 
-  toggleFlip() {
-    this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
-  }
+  toggleFlip(index: number): void {
+    this.flipStates[index] = this.flipStates[index] === 'inactive' ? 'active' : 'inactive';
+}
   question: any;
   questionHiddens: boolean[] = []
   teamWinner: string = '';
