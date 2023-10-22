@@ -23,6 +23,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class HomeComponent {
 
   displayOverlay: boolean = false;
+
+  private audio = new Audio();
   
 
   showOverlay(): void {
@@ -83,6 +85,12 @@ export class HomeComponent {
       this.scoreTeamA = result.data.scoreTeamA;
       this.scoreTeamB = result.data.scoreTeamB;
     });
+  }
+
+  playSound() {
+    this.audio.src = 'assets/music/openanswer.mp3';
+    this.audio.load();
+    this.audio.play();
   }
 
 }
