@@ -32,8 +32,9 @@ export class HomeComponent {
   message: string = '';
   scoreTeamA: number = 0;
   scoreTeamB: number = 0;
-  teamAWrongAnswers: [] = [];
-  teamBWrongAnswers: [] = [];
+  teamAWrongAnswers: boolean[] = [];
+  teamBWrongAnswers: boolean[] = [];
+  pressWinner = false;
 
   constructor() {
     this.socket = io('http://localhost:3000');
@@ -42,7 +43,10 @@ export class HomeComponent {
       this.flipStates = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive'];
       console.log(result);
       if (result.data === 0) {
+        this.pressWinner = false;
         this.question = null;
+        this.teamAWrongAnswers = [];
+        this.teamBWrongAnswers = [];
         return;
       }
       if (result.data === 1) {
@@ -61,12 +65,26 @@ export class HomeComponent {
     });
 
     this.socket.on('receive-incorrect-answer', (result) => {
+      if (result.data === 'team-a') {
+        this.teamAWrongAnswers.push(true);
+      }
+      if (result.data === 'team-b') {
+        this.teamBWrongAnswers.push(true);
+      }
       this.showOverlayWrongAnswer();
     });
 
     this.socket.on('receive-race-speed', (result) => {
       console.log(result.data);
-      this.teamWinner = result.data;
+      if (result.data === '000000000') {
+        this.pressWinner = false;
+        return;
+      }
+      if (!this.pressWinner) {
+        this.pressWinner = true;
+        this.teamWinner = result.data;
+        this.showOverlayStartWinner();
+      }
     });
 
     this.socket.on('receive-send-point-team', (result) => {
@@ -83,13 +101,13 @@ export class HomeComponent {
     this.displayOverlayWrongAnswer = true;
     setTimeout(() => {
       this.displayOverlayWrongAnswer = false;
-    }, 10000);
+    }, 5000);
   }
 
   showOverlayStartWinner(): void {
     this.displayOverlayStartWinner = true;
     setTimeout(() => {
       this.displayOverlayStartWinner = false;
-    }, 10000);
+    }, 5000);
   }
 }

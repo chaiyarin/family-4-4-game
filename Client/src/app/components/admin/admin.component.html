@@ -8,7 +8,16 @@
 <button>ข้อ 7</button>
 <button (click)="sendDisplay(0)">RESET</button>
 <button (click)="resetPlayer()">Reset Player</button>
-<button (click)="incorrectData()">ผิดจ้าาาาาา</button>
+<button (click)="incorrectData('team-a')">TEAM A ตอบผิด</button>
+<button (click)="incorrectData('team-b')">TEAM B ตอบผิด</button>
+<button (click)="playSoundWinnerPress()">เสียงผู้เล่นกดชิงได้ตอบก่อน</button>
+<button (click)="playSoundOpenTeam()">เสียงเปิดตัวผู้เล่นทีม</button>
+<button (click)="playSoundWinner()">เสียงทีมชนะตอนจบ</button>
+<button (click)="playSoundRobberPoint()">เสียงตอนตอบคำถามขโมยคะแนนสำเร็จ</button>
+<button (click)="playSoundWithMe()">เสียงเล่นเองหรือโยน</button>
+<button (click)="playSoundMeMeMe()">เสียงมี มี มี มี</button>
+<button (click)="playSoundAnswerSlow()">เสียงตอบช้าเกิด 3 วิ</button>
+
 <div>
     Team A: 
     <input type="text" [(ngModel)]="scoreTeamA" placeholder="Score Team A">

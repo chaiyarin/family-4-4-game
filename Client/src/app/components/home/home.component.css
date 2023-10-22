@@ -140,7 +140,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeOut 10s forwards; /* This animation will execute immediately when the page loads */
+    animation: fadeOut 5s forwards; /* This animation will execute immediately when the page loads */
 }
 
 @keyframes fadeOut {

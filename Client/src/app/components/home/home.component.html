@@ -3,15 +3,11 @@
 <div class="flex-container">
     <div class="flex-a-team">
         <div>TEAM A</div>
-        <span><img src="assets/xmark.png" width="100px" height="100px"></span>
-        <span><img src="assets/xmark.png" width="100px" height="100px"></span>
-        <span><img src="assets/xmark.png" width="100px" height="100px"></span>
+        <span *ngFor="let incorrect of teamAWrongAnswers"><img src="assets/xmark.png" width="100px" height="100px"></span>
     </div>
     <div class="flex-b-team">
         <div>TEAM B</div>
-        <span><img src="assets/xmark.png" width="100px" height="100px"></span>
-        <span><img src="assets/xmark.png" width="100px" height="100px"></span>
-        <span><img src="assets/xmark.png" width="100px" height="100px"></span>
+        <span *ngFor="let incorrect of teamBWrongAnswers"><img src="assets/xmark.png" width="100px" height="100px"></span>
     </div>
 </div>
 <div class="container" *ngIf="question">
@@ -46,5 +42,5 @@
 </div>
 
 <div *ngIf="displayOverlayStartWinner" class="overlay">
-    <h1 style="font-size: 200px;">TEAM A</h1>
+    <h1 style="font-size: 200px;">{{ teamWinner }}</h1>
 </div>

@@ -44,11 +44,11 @@ export class AdminComponent {
     this.socket.emit('send-race-speed', { data: '000000000' });
   }
 
-  incorrectData() {
+  incorrectData(teamName: string) {
     this.audio.src = 'assets/music/wronganswer.mp3';
     this.audio.load();
     this.audio.play();
-    this.socket.emit('send-incorrect-answer', { data: true });
+    this.socket.emit('send-incorrect-answer', { data: teamName });
   }
 
   sendPoint() {
@@ -58,5 +58,54 @@ export class AdminComponent {
         scoreTeamB: this.scoreTeamB
       }
     });
+  }
+
+  playSoundWinnerPress() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/presswinnner.mp3';
+    this.audio.load();
+    this.audio.play();
+  }
+
+  playSoundOpenTeam() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/openTeam.mp3';
+    this.audio.load();
+    this.audio.play();
+  }
+
+  playSoundWinner() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/winnerTeam.mp3';
+    this.audio.load();
+    this.audio.play(); 
+  }
+
+  playSoundRobberPoint() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/robberPointAndWinner.mp3';
+    this.audio.load();
+    this.audio.play();
+  }
+
+  playSoundWithMe() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/playSoundWithMe.mp3';
+    this.audio.load();
+    this.audio.play();
+  }
+
+  playSoundMeMeMe() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/mememe.mp3';
+    this.audio.load();
+    this.audio.play();
+  }
+
+  playSoundAnswerSlow() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/slowAnswer.mp3';
+    this.audio.load();
+    this.audio.play();
   }
 }
