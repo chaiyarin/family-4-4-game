@@ -78,7 +78,7 @@ export class AdminComponent {
     const audio = new Audio();
     this.audio.src = 'assets/music/winnerTeam.mp3';
     this.audio.load();
-    this.audio.play(); 
+    this.audio.play();
   }
 
   playSoundRobberPoint() {
@@ -107,5 +107,18 @@ export class AdminComponent {
     this.audio.src = 'assets/music/slowAnswer.mp3';
     this.audio.load();
     this.audio.play();
+  }
+
+  imageUrl: string = '';
+  openGame(game: string) {
+    if (game === '4familygame') {
+      this.socket.emit('send-game', { data: { game: game, image: this.imageUrl } });
+    }
+    if (game === 'jigsaw') {
+      this.socket.emit('send-game', { data: { game: game, image: this.imageUrl } });
+    }
+    if (game === 'ramdonNumber') {
+      this.socket.emit('send-game', { data: { game: game, image: this.imageUrl } });
+    }
   }
 }

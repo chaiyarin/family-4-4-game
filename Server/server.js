@@ -43,6 +43,10 @@ io.on('connection', (socket) => {
         io.emit('receive-send-point-team', data);
     });
 
+    socket.on('send-game', (data) => {
+        io.emit('receive-game', data);
+    });
+
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });

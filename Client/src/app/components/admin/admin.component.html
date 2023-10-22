@@ -17,13 +17,18 @@
 <button (click)="playSoundWithMe()">เสียงเล่นเองหรือโยน</button>
 <button (click)="playSoundMeMeMe()">เสียงมี มี มี มี</button>
 <button (click)="playSoundAnswerSlow()">เสียงตอบช้าเกิด 3 วิ</button>
+<button (click)="openGame('4familygame')">เปิดเกมส์ 4 ต่อ 4</button>
+<input type="text" [(ngModel)]="imageUrl" placeholder="Image URL JigSaw">
+<button (click)="openGame('jigsaw')">เปิดเกมส์ jigsaw</button>
+<button (click)="openGame('ramdonNumber')">เปิดเกมส์ สุ่มเลข</button>
+
 
 <div>
-    Team A: 
+    Team A:
     <input type="text" [(ngModel)]="scoreTeamA" placeholder="Score Team A">
 </div>
 <div>
-    Team B: 
+    Team B:
     <input type="text" [(ngModel)]="scoreTeamB" placeholder="Score Team B">
 </div>
 <div>

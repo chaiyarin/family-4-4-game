@@ -1,6 +1,6 @@
 <title>Main Stage</title>
 
-<div *ngIf="false">
+<div *ngIf="whatGame.game === '4familygame'">
     <div class="flex-container">
         <div class="flex-a-team">
             <div>TEAM A</div>
@@ -50,10 +50,14 @@
 
 </div>
 
-<div class="puzzle-board">
-    <img src="/assets/xmark.png" alt="Mountain" />
+<div *ngIf="whatGame.game === 'jigsaw'" class="puzzle-board">
+    <img src="{{whatGame.image}}" alt="Mountain" style="width: 100%; height: 100%;" />
     <div *ngFor="let card of cards" (click)="revealCard(card)" [ngClass]="{'cover': !card.revealed}"
         [ngStyle]="card.style">
         <span *ngIf="!card.revealed" class="number">{{ card.number }}</span>
     </div>
+</div>
+
+<div *ngIf="whatGame.game === 'ramdonNumber'">
+    Random Game
 </div>

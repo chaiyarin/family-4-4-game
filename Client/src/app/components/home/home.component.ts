@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
   teamAWrongAnswers: boolean[] = [];
   teamBWrongAnswers: boolean[] = [];
   pressWinner = false;
+  whatGame: any = { game: '4familygame', image: '' }
 
   constructor() {
     this.socket = io('http://localhost:3000');
@@ -57,6 +58,11 @@ export class HomeComponent implements OnInit {
         this.questionHiddens.push(false);
         this.flipStates.push('inactive');
       }
+    });
+
+    this.socket.on('receive-game', (result) => {
+      console.log('เปิดคำตอบ', result);
+      this.whatGame = result.data;
     });
 
     this.socket.on('receive-open-answer', (result) => {
