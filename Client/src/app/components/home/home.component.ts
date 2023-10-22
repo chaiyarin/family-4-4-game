@@ -48,6 +48,9 @@ export class HomeComponent implements OnInit {
         this.question = null;
         this.teamAWrongAnswers = [];
         this.teamBWrongAnswers = [];
+        for(let i=0; i<25; i++) {
+          this.cards[i].revealed = false;
+        }
         return;
       }
       if (result.data === 1) {
@@ -140,4 +143,5 @@ export class HomeComponent implements OnInit {
   revealCard(card: any): void {
     card.revealed = true;
   }
+
 }

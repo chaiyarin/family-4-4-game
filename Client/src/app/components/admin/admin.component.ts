@@ -109,7 +109,7 @@ export class AdminComponent {
     this.audio.play();
   }
 
-  imageUrl: string = '';
+  imageUrl: string = 'https://img.freepik.com/free-photo/front-view-sad-girl-being-bullied_23-2149748403.jpg?w=1800&t=st=1698002467~exp=1698003067~hmac=7819ff580a180ede83c1b1cc03f0c62ab8ae9b8b909f15bf4695c60d692dc352';
   openGame(game: string) {
     if (game === '4familygame') {
       this.socket.emit('send-game', { data: { game: game, image: this.imageUrl } });
