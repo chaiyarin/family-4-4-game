@@ -1,0 +1,29 @@
+{
+    "question": "อะไรที่สามารถแตกตาม ร่างกายได้ 5",
+    "choices": [
+        {
+            "answer": "แขน",
+            "point": 10
+        },
+        {
+            "answer": "ขา",
+            "point": 12
+        },
+        {
+            "answer": "ตา",
+            "point": 33
+        },
+        {
+            "answer": "หู",
+            "point": 43
+        },
+        {
+            "answer": "จมูก",
+            "point": 45
+        },
+        {
+            "answer": "ปาก",
+            "point": 87
+        }
+    ]
+}
