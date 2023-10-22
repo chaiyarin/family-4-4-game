@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { io } from 'socket.io-client';
 import * as question1 from './../../../assets/questions/question-1.json';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -20,7 +20,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   displayOverlayWrongAnswer: boolean = false;
   displayOverlayStartWinner: boolean = false;
@@ -109,5 +109,29 @@ export class HomeComponent {
     setTimeout(() => {
       this.displayOverlayStartWinner = false;
     }, 5000);
+  }
+
+  cards: any[] = [];
+
+
+  ngOnInit(): void {
+    const size = 100;
+    let count = 1;
+    for (let y = 0; y < 5; y++) {
+      for (let x = 0; x < 5; x++) {
+        this.cards.push({
+          revealed: false,
+          number: count++,
+          style: {
+            left: `${x * size}px`,
+            top: `${y * size}px`
+          }
+        });
+      }
+    }
+  }
+
+  revealCard(card: any): void {
+    card.revealed = true;
   }
 }

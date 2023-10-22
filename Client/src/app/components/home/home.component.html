@@ -1,46 +1,59 @@
 <title>Main Stage</title>
 
-<div class="flex-container">
-    <div class="flex-a-team">
-        <div>TEAM A</div>
-        <span *ngFor="let incorrect of teamAWrongAnswers"><img src="assets/xmark.png" width="100px" height="100px"></span>
+<div *ngIf="false">
+    <div class="flex-container">
+        <div class="flex-a-team">
+            <div>TEAM A</div>
+            <span *ngFor="let incorrect of teamAWrongAnswers"><img src="assets/xmark.png" width="100px"
+                    height="100px"></span>
+        </div>
+        <div class="flex-b-team">
+            <div>TEAM B</div>
+            <span *ngFor="let incorrect of teamBWrongAnswers"><img src="assets/xmark.png" width="100px"
+                    height="100px"></span>
+        </div>
     </div>
-    <div class="flex-b-team">
-        <div>TEAM B</div>
-        <span *ngFor="let incorrect of teamBWrongAnswers"><img src="assets/xmark.png" width="100px" height="100px"></span>
+    <div class="container" *ngIf="question">
+        <div *ngFor="let choices of question.choices; index as i;" class="flip-container">
+            <div class="card" [@flipState]="flipStates[i]">
+                <div class="card-face card-face-front">
+                    <div class="number-button">
+                        <span>{{ i+1 }}</span>
+                    </div>
+                </div>
+                <div class="card-face card-face-back">
+                    <div class="button-container">
+                        <span class="text-left">{{ choices.answer }}</span>
+                        <span class="text-right">{{ choices.point }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="container" *ngIf="question">
-    <div *ngFor="let choices of question.choices; index as i;" class="flip-container">
-        <div class="card" [@flipState]="flipStates[i]">
+    <div *ngIf="question">
+        <div class="card">
             <div class="card-face card-face-front">
                 <div class="number-button">
-                    <span>{{ i+1 }}</span>
-                </div>
-            </div>
-            <div class="card-face card-face-back">
-                <div class="button-container">
-                    <span class="text-left">{{ choices.answer }}</span>
-                    <span class="text-right">{{ choices.point }}</span>
+                    <h1>{{ question.question}}</h1>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div *ngIf="question">
-    <div class="card">
-        <div class="card-face card-face-front">
-            <div class="number-button">
-                <h1>{{ question.question}}</h1>
-            </div>
-        </div>
+
+    <div *ngIf="displayOverlayWrongAnswer" class="overlay">
+        <img src="assets/xmark.png" width="100%" height="100%">.
     </div>
+
+    <div *ngIf="displayOverlayStartWinner" class="overlay">
+        <h1 style="font-size: 200px;">{{ teamWinner }}</h1>
+    </div>
+
 </div>
 
-<div *ngIf="displayOverlayWrongAnswer" class="overlay">
-    <img src="assets/xmark.png" width="100%" height="100%">.
-</div>
-
-<div *ngIf="displayOverlayStartWinner" class="overlay">
-    <h1 style="font-size: 200px;">{{ teamWinner }}</h1>
+<div class="puzzle-board">
+    <img src="/assets/xmark.png" alt="Mountain" />
+    <div *ngFor="let card of cards" (click)="revealCard(card)" [ngClass]="{'cover': !card.revealed}"
+        [ngStyle]="card.style">
+        <span *ngIf="!card.revealed" class="number">{{ card.number }}</span>
+    </div>
 </div>

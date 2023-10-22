@@ -115,17 +115,26 @@
 }
 
 .overlay {
-    position: fixed; /* This will make the div fixed and cover the entire viewport */
+    position: fixed;
+    /* This will make the div fixed and cover the entire viewport */
     top: 0;
     left: 0;
-    width: 100vw; /* Viewport width */
-    height: 100vh; /* Viewport height */
-    background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
-    color: white; /* Text color */
-    z-index: 1000; /* This ensures the overlay is on top of other content */
-    display: flex; /* Flexbox for centering content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    width: 100vw;
+    /* Viewport width */
+    height: 100vh;
+    /* Viewport height */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black background with 70% opacity */
+    color: white;
+    /* Text color */
+    z-index: 1000;
+    /* This ensures the overlay is on top of other content */
+    display: flex;
+    /* Flexbox for centering content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
 }
 
 .overlay {
@@ -140,12 +149,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeOut 5s forwards; /* This animation will execute immediately when the page loads */
+    animation: fadeOut 5s forwards;
+    /* This animation will execute immediately when the page loads */
 }
 
 @keyframes fadeOut {
     to {
         opacity: 0;
-        pointer-events: none; /* Ensure it won't interfere with other elements after fading out */
+        pointer-events: none;
+        /* Ensure it won't interfere with other elements after fading out */
     }
 }
+
+.puzzle-board {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cover {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+    position: absolute;
+    border: 1px solid black;
+    box-sizing: border-box; /* ensures that the border doesn't increase the size of the tile */
+  }
+  
+  .number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: black;
+    font-size: 24px;
+  }
+  
