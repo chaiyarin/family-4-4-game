@@ -18,27 +18,13 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       transition('active => inactive', animate('500ms ease-out')),
       transition('inactive => active', animate('500ms ease-in'))
     ])
-  ]  
+  ]
 })
 export class HomeComponent {
 
-  displayOverlay: boolean = false;
-
-  private audio = new Audio();
-  
-
-  showOverlay(): void {
-      this.displayOverlay = true;
-      setTimeout(() => {
-          this.displayOverlay = false;
-      }, 10000);
-  }
-
-  flipStates: string[] = ['inactive', 'inactive'];
-
-  toggleFlip(index: number): void {
-    this.flipStates[index] = this.flipStates[index] === 'inactive' ? 'active' : 'inactive';
-}
+  displayOverlayWrongAnswer: boolean = false;
+  displayOverlayStartWinner: boolean = false;
+  flipStates: string[] = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive'];
   question: any;
   questionHiddens: boolean[] = []
   teamWinner: string = '';
@@ -53,10 +39,11 @@ export class HomeComponent {
     this.socket = io('http://localhost:3000');
 
     this.socket.on('receive-display', (result) => {
-      this.questionHiddens = [];
+      this.flipStates = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive'];
       console.log(result);
       if (result.data === 0) {
         this.question = null;
+        return;
       }
       if (result.data === 1) {
         this.question = (question1 as any).default;
@@ -64,16 +51,17 @@ export class HomeComponent {
       }
       for (let i = 0; i < this.question.choices.lenght; i++) {
         this.questionHiddens.push(false);
+        this.flipStates.push('inactive');
       }
     });
 
     this.socket.on('receive-open-answer', (result) => {
       console.log('เปิดคำตอบ', result);
-      this.questionHiddens[result.data] = true;
+      this.toggleFlip(result.data);
     });
 
     this.socket.on('receive-incorrect-answer', (result) => {
-      alert('ผิดจ้า');
+      this.showOverlayWrongAnswer();
     });
 
     this.socket.on('receive-race-speed', (result) => {
@@ -87,10 +75,21 @@ export class HomeComponent {
     });
   }
 
-  playSound() {
-    this.audio.src = 'assets/music/openanswer.mp3';
-    this.audio.load();
-    this.audio.play();
+  toggleFlip(index: number): void {
+    this.flipStates[index] = this.flipStates[index] === 'inactive' ? 'active' : 'inactive';
   }
 
+  showOverlayWrongAnswer(): void {
+    this.displayOverlayWrongAnswer = true;
+    setTimeout(() => {
+      this.displayOverlayWrongAnswer = false;
+    }, 10000);
+  }
+
+  showOverlayStartWinner(): void {
+    this.displayOverlayStartWinner = true;
+    setTimeout(() => {
+      this.displayOverlayStartWinner = false;
+    }, 10000);
+  }
 }

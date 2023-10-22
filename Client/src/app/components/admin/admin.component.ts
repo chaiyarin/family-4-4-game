@@ -10,11 +10,11 @@ import * as question1 from './../../../assets/questions/question-1.json';
 export class AdminComponent {
 
   question: any = null;
-  title = 'angular-socketio-demo';
   socket;
   message: string = '';
   scoreTeamA: number = 0;
   scoreTeamB: number = 0;
+  private audio = new Audio();
 
   constructor() {
     console.log(this.question);
@@ -34,6 +34,9 @@ export class AdminComponent {
   }
 
   sendOpenAnswer(answerNumber: number) {
+    this.audio.src = 'assets/music/openanswer.mp3';
+    this.audio.load();
+    this.audio.play();
     this.socket.emit('send-open-answer', { data: answerNumber });
   }
 
@@ -42,6 +45,9 @@ export class AdminComponent {
   }
 
   incorrectData() {
+    this.audio.src = 'assets/music/wronganswer.mp3';
+    this.audio.load();
+    this.audio.play();
     this.socket.emit('send-incorrect-answer', { data: true });
   }
 
