@@ -21,6 +21,17 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]  
 })
 export class HomeComponent {
+
+  displayOverlay: boolean = false;
+  
+
+  showOverlay(): void {
+      this.displayOverlay = true;
+      setTimeout(() => {
+          this.displayOverlay = false;
+      }, 10000);
+  }
+
   flipStates: string[] = ['inactive', 'inactive'];
 
   toggleFlip(index: number): void {

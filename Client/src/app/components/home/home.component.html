@@ -32,7 +32,37 @@
         <div class="card"  [@flipState]="flipStates[1]">
             <div class="card-face card-face-front">
                 <div class="number-button">
-                    <span>1</span>
+                    <span>2</span>
+                </div>
+            </div>
+            <div class="card-face card-face-back">
+                <div class="button-container">
+                    <span class="text-left">ภาษา</span>
+                    <span class="text-right">40</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flip-container" (click)="toggleFlip(1)">
+        <div class="card"  [@flipState]="flipStates[1]">
+            <div class="card-face card-face-front">
+                <div class="number-button">
+                    <span>3</span>
+                </div>
+            </div>
+            <div class="card-face card-face-back">
+                <div class="button-container">
+                    <span class="text-left">ภาษา</span>
+                    <span class="text-right">40</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flip-container" (click)="toggleFlip(1)">
+        <div class="card"  [@flipState]="flipStates[1]">
+            <div class="card-face card-face-front">
+                <div class="number-button">
+                    <span>4</span>
                 </div>
             </div>
             <div class="card-face card-face-back">
@@ -44,3 +74,22 @@
         </div>
     </div>
 </div>
+<div>
+    <div class="card">
+        <div class="card-face card-face-front">
+            <div class="number-button">
+                <h1>รักแท้มีอยู่จริงหรือไม่</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="overlay">
+    <img src="assets/xmark.png" width="100%" height="100%">.
+</div> -->
+
+<div *ngIf="displayOverlay" class="overlay">
+    <h1 style="font-size: 200px;">TEAM A</h1>
+</div>
+
+<button (click)="showOverlay()">Show Overlay</button>
