@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { io } from 'socket.io-client';
+import { environment } from 'src/environments/environment';
 import * as question1 from './../../../assets/questions/question-1.json';
 import * as question2 from './../../../assets/questions/question-2.json';
 import * as question3 from './../../../assets/questions/question-3.json';
@@ -24,12 +25,16 @@ export class AdminComponent {
 
   constructor() {
     console.log(this.question);
-    this.socket = io('http://localhost:3000');
+    this.socket = io(environment.apiUrl);
   }
 
   sendDisplay(questionNumber: number) {
     if (questionNumber === 0) {
       this.question = null;
+    }
+    if (questionNumber === 1) {
+      this.question = (question1 as any).default;
+      console.log(this.question);
     }
     if (questionNumber === 2) {
       this.question = (question2 as any).default;

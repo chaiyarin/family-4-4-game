@@ -8,6 +8,7 @@ import * as question5 from './../../../assets/questions/question-5.json';
 import * as question6 from './../../../assets/questions/question-6.json';
 import * as question7 from './../../../assets/questions/question-7.json';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -44,7 +45,7 @@ export class HomeComponent implements OnInit {
   whatGame: any = { game: '4familygame', image: '' }
 
   constructor() {
-    this.socket = io('http://localhost:3000');
+    this.socket = io(environment.apiUrl);
 
     this.socket.on('receive-display', (result) => {
       this.flipStates = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive'];
