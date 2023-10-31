@@ -1,29 +1,33 @@
 {
-    "question": "อะไรที่สามารถแตกตาม ร่างกายได้",
+    "question": "คนจะสะบัดส่วนใดให้แรงที่สุดเวลาเต้น",
     "choices": [
         {
+            "answer": "ศีรษะ",
+            "point": 28
+        },
+        {
             "answer": "แขน",
-            "point": 10
+            "point": 21
+        },
+        {
+            "answer": "เอว",
+            "point": 18
+        },
+        {
+            "answer": "สะโพก / ก้น",
+            "point": 17
         },
         {
             "answer": "ขา",
-            "point": 12
+            "point": 6
         },
         {
-            "answer": "ตา",
-            "point": 33
+            "answer": "มือ",
+            "point": 4
         },
-        {
-            "answer": "หู",
-            "point": 43
-        },
-        {
-            "answer": "จมูก",
-            "point": 45
-        },
-        {
-            "answer": "ปาก",
-            "point": 87
+         {
+            "answer": "หัวไหล่",
+            "point": 3
         }
     ]
 }
