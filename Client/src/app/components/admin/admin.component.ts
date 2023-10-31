@@ -24,7 +24,6 @@ export class AdminComponent {
   private audio = new Audio();
 
   constructor() {
-    console.log(this.question);
     this.socket = io(environment.apiUrl);
   }
 
@@ -151,5 +150,15 @@ export class AdminComponent {
     if (game === 'ramdonNumber') {
       this.socket.emit('send-game', { data: { game: game, image: this.imageUrl } });
     }
+  }
+
+  random() {
+    this.socket.emit('send-random', { data: '' });
+  }
+  randomPTum() {
+    this.socket.emit('send-random', { data: 'PTum' });
+  }
+  randomPPa() {
+    this.socket.emit('send-random', { data: 'PPa' });
   }
 }

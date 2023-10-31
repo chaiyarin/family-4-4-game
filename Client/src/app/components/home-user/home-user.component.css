@@ -1,0 +1,40 @@
+.flex-container {
+    display: flex;
+    background-color: #f1f1f1;
+    
+}
+
+.flex-container>div {
+    background-color: rgb(99, 101, 103);
+    color: white;
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;   
+}
+
+.flex-item {
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: left 4s ease-out;
+}
+
+.item {
+    margin: 20px;
+}
+img {
+    border-radius: 5px;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: red;
+  }

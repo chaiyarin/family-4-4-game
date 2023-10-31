@@ -25,6 +25,11 @@ io.on('connection', (socket) => {
         io.emit('receive-display', data);
     });
 
+    socket.on('send-random', (data) => {
+        console.log(data);
+        io.emit('receive-random', data);
+    });
+
     socket.on('send-open-answer', (data) => {
         console.log(data);
         io.emit('receive-open-answer', data);
