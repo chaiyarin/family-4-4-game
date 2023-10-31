@@ -8,19 +8,38 @@
 <button (click)="sendDisplay(7)">ข้อ 7</button>
 <button (click)="sendDisplay(0)">RESET</button>
 <button (click)="resetPlayer()">Reset Player</button>
-<button (click)="incorrectData('team-a')">TEAM A ตอบผิด</button>
-<button (click)="incorrectData('team-b')">TEAM B ตอบผิด</button>
-<button (click)="playSoundWinnerPress()">เสียงผู้เล่นกดชิงได้ตอบก่อน</button>
-<button (click)="playSoundOpenTeam()">เสียงเปิดตัวผู้เล่นทีม</button>
-<button (click)="playSoundWinner()">เสียงทีมชนะตอนจบ</button>
-<button (click)="playSoundRobberPoint()">เสียงตอนตอบคำถามขโมยคะแนนสำเร็จ</button>
-<button (click)="playSoundWithMe()">เสียงเล่นเองหรือโยน</button>
-<button (click)="playSoundMeMeMe()">เสียงมี มี มี มี</button>
-<button (click)="playSoundAnswerSlow()">เสียงตอบช้าเกิด 3 วิ</button>
 <button (click)="openGame('4familygame')">เปิดเกมส์ 4 ต่อ 4</button>
-<input type="text" [(ngModel)]="imageUrl" placeholder="Image URL JigSaw">
+<input type="text" [(ngModel)]="imageUrl" placeholder="Image URL JigSaw" />
 <button (click)="openGame('jigsaw')">เปิดเกมส์ jigsaw</button>
 <button (click)="openGame('ramdonNumber')">เปิดเกมส์ สุ่มเลข</button>
+<div style="border: 2px solid red; border-radius: 5px; padding: 10px">
+  <h1>กดปุ่มแย่งกัน</h1>
+  <button class="p-2" (click)="playSoundWinnerPress()">
+    เสียงผู้เล่นกดชิงได้ตอบก่อน
+  </button>
+</div>
+
+<div style="border: 2px solid red; border-radius: 5px; padding: 10px">
+  <h1>โยนไม่โยนและเปิดตัว</h1>
+  <button class="p-2" (click)="playSoundWithMe()">เสียงเล่นเองหรือโยน</button>
+  <button class="p-2" (click)="playSoundOpenTeam()">
+    เสียงเปิดตัวผู้เล่นทีม
+  </button>
+</div>
+
+<div style="border: 2px solid red; border-radius: 5px; padding: 10px">
+  <h1>ตอบคำถามก่อนกดเปิดป้าย และผิด และชนะ</h1>
+  <button class="p-2" (click)="playSoundMeMeMe()">เสียงมี มี มี มี</button>
+  <button class="p-2" (click)="playSoundAnswerSlow()">
+    เสียงตอบช้าเกิด 3 วิ
+  </button>
+  <button class="p-2" (click)="incorrectData('team-a')">TEAM A ตอบผิด</button>
+  <button class="p-2" (click)="incorrectData('team-b')">TEAM B ตอบผิด</button>
+  <button class="p-2" (click)="playSoundRobberPoint()">
+    เสียงตอนตอบคำถามขโมยคะแนนสำเร็จ
+  </button>
+  <button class="p-2" (click)="playSoundWinner()">เสียงทีมชนะตอนจบ</button>
+</div>
 <button class="btn" (click)="random()">Random 1</button>
 <button class="btn" (click)="randomPTum()">Random 2</button>
 <button class="btn" (click)="randomPPa()">Random 3</button>

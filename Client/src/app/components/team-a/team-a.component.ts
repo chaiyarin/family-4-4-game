@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./team-a.component.css']
 })
 export class TeamAComponent {
-
   isShow: boolean = true;
   message: string = '';
   socket;

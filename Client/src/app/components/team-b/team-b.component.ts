@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { io } from 'socket.io-client';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-team-b',
@@ -12,7 +13,7 @@ export class TeamBComponent {
   socket;
 
   constructor() {
-    this.socket = io('http://localhost:3000');
+    this.socket = io(environment.apiUrl);
 
     this.socket.on('receive-race-speed', (result) => {
       console.log(result.data);

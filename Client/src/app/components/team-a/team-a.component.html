@@ -1,9 +1,9 @@
-<title>TEAM A</title>
-
-<div *ngIf="!isShow" style="font-size: 50px; text-align: center;">
+<div
+  style="background-color: #ff0000"
+  (click)="sendRaceSpeed()"
+  class="full-screen"
+>
+  <div *ngIf="!isShow" style="font-size: 50px; text-align: center">
     <h1>{{ message }} ได้เล่นก่อน</h1>
-</div>
-
-<div *ngIf="isShow" (click)="sendRaceSpeed()" class="full-screen">
-    เอานิ้ววางบนจอเมื่อพร้อม
+  </div>
 </div>
