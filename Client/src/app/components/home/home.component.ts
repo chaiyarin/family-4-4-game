@@ -267,6 +267,7 @@ export class HomeComponent implements OnInit {
       this.flipStates = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive'];
       console.log(result);
       if (result.data === 0) {
+        this.timeLeft = 30;
         this.pressWinner = false;
         this.question = null;
         this.teamAWrongAnswers = [];
