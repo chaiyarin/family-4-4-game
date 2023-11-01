@@ -190,6 +190,13 @@ export class AdminComponent {
 
 
   openQuiz(quizNo: number) {
+    if(quizNo === 0) {
+      this.socket.emit('send-timer', {
+        data: {
+          isOn: false
+        }
+      });
+    }
     this.socket.emit('send-quiz', {
       data: {
         quizNo: quizNo,

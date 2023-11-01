@@ -336,6 +336,10 @@ export class HomeComponent implements OnInit {
 
     this.socket.on('receive-timer', (result) => {
       this.isShowTimer = result.data.isOn;
+      if (!this.isShowTimer) {
+        clearInterval(this.interval);
+        this.timeLeft = 30;
+      }
       if (this.isShowTimer) {
         this.startTimer()
       }
