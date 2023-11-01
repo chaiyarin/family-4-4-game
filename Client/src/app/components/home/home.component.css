@@ -141,8 +141,8 @@
 .overlay-qrcode {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    left: 25%;
+    width: 60vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
