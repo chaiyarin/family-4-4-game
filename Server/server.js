@@ -52,6 +52,10 @@ io.on('connection', (socket) => {
         io.emit('receive-game', data);
     });
 
+    socket.on('send-timer', (data) => {
+        io.emit('receive-timer', data);
+    });
+
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });

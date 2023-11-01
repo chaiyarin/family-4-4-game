@@ -161,4 +161,11 @@ export class AdminComponent {
   randomPPa() {
     this.socket.emit('send-random', { data: 'PPa' });
   }
+  sendStartTimmer() {
+    this.socket.emit('send-timer', {
+      data: {
+        isOn: true
+      }
+    });
+  }
 }

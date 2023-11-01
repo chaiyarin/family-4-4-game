@@ -153,6 +153,29 @@
     /* This animation will execute immediately when the page loads */
 }
 
+.overlay-timer {
+    position: fixed;
+    /* This will make the div fixed and cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Viewport width */
+    height: 100vh;
+    /* Viewport height */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black background with 70% opacity */
+    color: white;
+    /* Text color */
+    z-index: 1000;
+    /* This ensures the overlay is on top of other content */
+    display: flex;
+    /* Flexbox for centering content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
 @keyframes fadeOut {
     to {
         opacity: 0;
@@ -186,4 +209,17 @@
     font-weight: bold;
     color: black;
     font-size: 24px;
+}
+
+.countdown-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.timer {
+    font-size: 13rem;
+    font-weight: bold;
 }

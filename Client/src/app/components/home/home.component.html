@@ -61,3 +61,7 @@
 <div *ngIf="whatGame.game === 'ramdonNumber'">
     Random Game
 </div>
+
+<div class="countdown-timer" class="overlay-timer" *ngIf="isShowTimer">
+    <div class="timer">{{ timeLeft }} seconds</div>
+</div>

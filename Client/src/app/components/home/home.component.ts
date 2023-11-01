@@ -29,6 +29,9 @@ import { environment } from 'src/environments/environment';
 })
 export class HomeComponent implements OnInit {
 
+  isShowTimer: boolean = false;
+  timeLeft: number = 30; // Initial countdown time in seconds
+  interval: any;
   displayOverlayWrongAnswer: boolean = false;
   displayOverlayStartWinner: boolean = false;
   flipStates: string[] = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive'];
@@ -114,6 +117,13 @@ export class HomeComponent implements OnInit {
       this.showOverlayWrongAnswer();
     });
 
+    this.socket.on('receive-timer', (result) => {
+      this.isShowTimer = result.data.isOn;
+      if (this.isShowTimer) {
+        this.startTimer()
+      }
+    });
+
     this.socket.on('receive-race-speed', (result) => {
       console.log(result.data);
       if (result.data === '000000000') {
@@ -173,6 +183,19 @@ export class HomeComponent implements OnInit {
 
   revealCard(card: any): void {
     card.revealed = true;
+  }
+
+  startTimer() {
+    this.interval = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        clearInterval(this.interval);
+      }
+      if (this.timeLeft === 0) {
+        this.isShowTimer = false;
+      }
+    }, 1000);
   }
 
 }

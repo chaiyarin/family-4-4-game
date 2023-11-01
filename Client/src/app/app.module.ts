@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { TeamAComponent } from './components/team-a/team-a.component';
 import { TeamBComponent } from './components/team-b/team-b.component';
 import { HomeUserComponent } from './components/home-user/home-user.component';
+import { QuizAdminComponent } from './components/quiz-admin/quiz-admin.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeUserComponent } from './components/home-user/home-user.component';
     AdminComponent,
     TeamAComponent,
     TeamBComponent,
-    HomeUserComponent
+    HomeUserComponent,
+    QuizAdminComponent
   ],
   imports: [
     BrowserModule,

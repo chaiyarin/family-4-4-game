@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://anothai-api.mobily.work'
+    apiUrl: 'http://localhost:3000'
 };
