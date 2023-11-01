@@ -3,6 +3,12 @@
     flex-direction: row;
 }
 
+.random-container {
+    display: flex;
+    background-color: #5aa6d8;
+    overflow-y: scroll;
+}
+
 .flex-a-team {
     background-color: #FF8A80;
     color: black;
