@@ -1,89 +1,122 @@
 <title>Admin</title>
-<div style="border: 2px solid red; border-radius: 5px; padding: 10px">
+<div class="group">
   <h1>เกมสำหรับผู้เล่นบนเวที</h1>
-<button (click)="sendDisplay(1)">ข้อ 1</button>
-<button (click)="sendDisplay(2)">ข้อ 2</button>
-<button (click)="sendDisplay(3)">ข้อ 3</button>
-<button (click)="sendDisplay(4)">ข้อ 4</button>
-<button (click)="sendDisplay(5)">ข้อ 5</button>
-<button (click)="sendDisplay(6)">ข้อ 6</button>
-<button (click)="sendDisplay(7)">ข้อ 7</button>
-<button (click)="sendDisplay(0)">RESET</button>
-<button (click)="resetPlayer()">Reset Player</button>
-<button (click)="openGame('4familygame')">เปิดเกมส์ 4 ต่อ 4</button>
-<input type="text" [(ngModel)]="imageUrl" placeholder="Image URL JigSaw" />
-<button (click)="openGame('jigsaw')">เปิดเกมส์ jigsaw</button>
-<button (click)="openGame('ramdonNumber')">เปิดเกมส์ สุ่มเลข</button>
-<button (click)="openGame('randomGame')">เกมลุ้นโชค</button>
+  <div>
+    <button class="p-2" (click)="openGame('4familygame')">
+      เปิดเกมส์ 4 ต่อ 4
+    </button>
+    <button class="p-2" (click)="sendStartTimmer()">
+      เปิดตัวจับเวลาปิด เปิดคำถาม ของ Quiz
+    </button>
+    <button class="p-2" (click)="openQuiz(0)">
+      Lock หน้าจอคำถามไม่ให้ผู้ใช้ส่งคำตอบ
+    </button>
+
+    <button class="p-2" (click)="openQRCode()">เปิด QrCode</button>
+    <button class="p-2" (click)="closeQRCode()">ปิด QrCode</button>
+  </div>
+  <div>
+    <h1>กลุ่มเล่นเกม 4 VS 4</h1>
+    <div>
+      <button class="p-2" (click)="sendDisplay(1)">ข้อ 1</button>
+      <button class="p-2" (click)="sendDisplay(2)">ข้อ 2</button>
+      <button class="p-2" (click)="sendDisplay(3)">ข้อ 3</button>
+      <button class="p-2" (click)="sendDisplay(4)">ข้อ 4</button>
+    </div>
+    <div>
+      <button class="p-2" (click)="openQuiz(1)">
+        Quiz 1 เปิด 4 ต่อ 4 คำถาม 1
+      </button>
+      <button class="p-2" (click)="openQuiz(2)">
+        Quiz 2 เปิด 4 ต่อ 4 คำถาม 2
+      </button>
+      <button class="p-2" (click)="openQuiz(3)">
+        Quiz 3 เปิด 4 ต่อ 4 คำถาม 3
+      </button>
+      <button class="p-2" (click)="openQuiz(4)">
+        Quiz 4 เปิด 4 ต่อ 4 คำถาม 4
+      </button>
+    </div>
+  </div>
+  <div>
+    <h1>Reset ทุกอย่าง</h1>
+    <div>
+      <button class="p-2" (click)="sendDisplay(0)">RESET</button>
+      <button class="p-2" (click)="resetPlayer()">Reset Player</button>
+    </div>
+  </div>
+  <div>
+    <h1>เสียงตอนกดปุ่ม</h1>
+    <div>
+      <button class="p-2" (click)="playSoundWinnerPress()">
+        เสียงผู้เล่นกดชิงได้ตอบก่อน
+      </button>
+    </div>
+  </div>
+  <div>
+    <h1>โยนไม่โยนและเปิดตัว</h1>
+    <div>
+      <button class="p-2" (click)="playSoundWithMe()">
+        เสียงเล่นเองหรือโยน
+      </button>
+      <button class="p-2" (click)="playSoundOpenTeam()">
+        เสียงเปิดตัวผู้เล่นทีม
+      </button>
+    </div>
+  </div>
+  <div>
+    <h1>ตอบคำถามก่อนกดเปิดป้าย และผิด และชนะ</h1>
+    <div>
+      <button class="p-2" (click)="playSoundMeMeMe()">เสียงมี มี มี มี</button>
+      <button class="p-2" (click)="playSoundAnswerSlow()">
+        เสียงตอบช้าเกิด 3 วิ
+      </button>
+      <button class="p-2" (click)="incorrectData('team-a')">
+        TEAM A ตอบผิด
+      </button>
+      <button class="p-2" (click)="incorrectData('team-b')">
+        TEAM B ตอบผิด
+      </button>
+      <button class="p-2" (click)="playSoundRobberPoint()">
+        เสียงตอนตอบคำถามขโมยคะแนนสำเร็จ
+      </button>
+      <button class="p-2" (click)="playSoundWinner()">เสียงทีมชนะตอนจบ</button>
+    </div>
+  </div>
 </div>
 
-<div style="border: 2px solid red; border-radius: 5px; padding: 10px">
-  <h1>Quiz สำหรับผู้เล่นทางบ้าน</h1>
-  <button (click)="sendStartTimmer()">เปิดตัวจับเวลาปิด เปิดคำถาม ของ Quiz</button>
-  <button (click)="openQRCode()">เปิด QrCode</button>
-  <button (click)="closeQRCode()">ปิด QrCode</button>
-  <button (click)="openQuiz(1)">Quiz 1 เปิด 4 ต่อ 4 คำถาม 1</button>
-  <button (click)="openQuiz(2)">Quiz 2 เปิด 4 ต่อ 4 คำถาม 2</button>
-  <button (click)="openQuiz(3)">Quiz 3 เปิด 4 ต่อ 4 คำถาม 3</button>
-  <button (click)="openQuiz(4)">Quiz 4 เปิด 4 ต่อ 4 คำถาม 4</button>
-  <button (click)="openQuiz(5)">Quiz 5 เปิด Jigsaw 1</button>
-  <button (click)="openQuiz(6)">Quiz 6 เปิด Jigsaw 2</button>
-  <button (click)="openQuiz(7)">Quiz 7 เปิด คำถาม</button>
-  <button (click)="openQuiz(0)">Lock หน้าจอคำถามไม่ให้ผู้ใช้ส่งคำตอบ</button>
+<div class="group">
+  <h1>เกม Jigsaw</h1>
+  <input type="text" [(ngModel)]="imageUrl" placeholder="Image URL JigSaw" />
+  <button class="p-2" (click)="openGame('jigsaw')">เปิดเกมส์ jigsaw</button>
+
+  <button class="p-2" (click)="openQuiz(5)">Quiz 5 เปิด Jigsaw 1</button>
+  <button class="p-2" (click)="openQuiz(6)">Quiz 6 เปิด Jigsaw 2</button>
 </div>
-<div style="border: 2px solid red; border-radius: 5px; padding: 10px">
-  <h1>กดปุ่มแย่งกัน</h1>
-  <button class="p-2" (click)="playSoundWinnerPress()">
-    เสียงผู้เล่นกดชิงได้ตอบก่อน
+<div class="group">
+  <h1>เกม Random Number</h1>
+  <button class="p-2" (click)="openGame('ramdonNumber')">
+    เปิดเกมส์ สุ่มเลข
   </button>
+  <button class="p-2" (click)="openQuiz(7)">Quiz 7 เปิด คำถาม</button>
 </div>
 
-<div style="border: 2px solid red; border-radius: 5px; padding: 10px">
-  <h1>โยนไม่โยนและเปิดตัว</h1>
-  <button class="p-2" (click)="playSoundWithMe()">เสียงเล่นเองหรือโยน</button>
-  <button class="p-2" (click)="playSoundOpenTeam()">
-    เสียงเปิดตัวผู้เล่นทีม
-  </button>
-</div>
-
-<div style="border: 2px solid red; border-radius: 5px; padding: 10px">
-  <h1>ตอบคำถามก่อนกดเปิดป้าย และผิด และชนะ</h1>
-  <button class="p-2" (click)="playSoundMeMeMe()">เสียงมี มี มี มี</button>
-  <button class="p-2" (click)="playSoundAnswerSlow()">
-    เสียงตอบช้าเกิด 3 วิ
-  </button>
-  <button class="p-2" (click)="incorrectData('team-a')">TEAM A ตอบผิด</button>
-  <button class="p-2" (click)="incorrectData('team-b')">TEAM B ตอบผิด</button>
-  <button class="p-2" (click)="playSoundRobberPoint()">
-    เสียงตอนตอบคำถามขโมยคะแนนสำเร็จ
-  </button>
-  <button class="p-2" (click)="playSoundWinner()">เสียงทีมชนะตอนจบ</button>
-</div>
-<button class="btn" (click)="random()">Random 1</button>
-<button class="btn" (click)="randomPTum()">Random 2</button>
-<button class="btn" (click)="randomPPa()">Random 3</button>
-
-<div>
-    Team A:
-    <input type="text" [(ngModel)]="scoreTeamA" placeholder="Score Team A">
-</div>
-<div>
-    Team B:
-    <input type="text" [(ngModel)]="scoreTeamB" placeholder="Score Team B">
-</div>
-<div>
-    <button (click)="sendPoint()">ส่งคะแนน</button>
+<div class="group">
+  <h1>สุ่มผู้โชคดี</h1>
+  <button class="p-2" (click)="openGame('randomGame')">เกมลุ้นโชค</button>
+  <button class="p-2" (click)="random()">Random 1</button>
+  <button class="p-2" (click)="randomPTum()">Random 2</button>
+  <button class="p-2" (click)="randomPPa()">Random 3</button>
 </div>
 
 <div *ngIf="question">
+  <div>
+    <h1>{{ question.question }}</h1>
+  </div>
+  <div *ngFor="let q of question.choices; index as i">
     <div>
-        <h1>{{ question.question }}</h1>
+      {{ i }} : {{ q.answer }}
+      <button class="p-2" (click)="sendOpenAnswer(i)">เปิดป้าย</button>
     </div>
-    <div *ngFor="let q of question.choices; index as i;">
-        <div>
-            {{ q.answer }}
-            <button (click)="sendOpenAnswer(i)">เปิดป้าย</button>
-        </div>
-    </div>
+  </div>
 </div>
-
