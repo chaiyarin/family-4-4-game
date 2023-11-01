@@ -100,6 +100,12 @@ export class QuizAudienceComponent implements OnInit {
   }
 
   sendAnswer(): void {
+
+    if (this.senderName === '' || this.senderName === null) {
+      alert('กรุณากรอกชื่อของท่านก่อนส่งคำตอบ');
+      return;
+    }
+
     this.socket.emit('send-answer', {
       data: {
         quizNo: this.quiz.quizNo,
@@ -112,6 +118,12 @@ export class QuizAudienceComponent implements OnInit {
   }
 
   sendAnswerNumberAnothai(anothaiNumber: number): void {
+
+    if (this.senderName === '' || this.senderName === null) {
+      alert('กรุณากรอกชื่อของท่านก่อนส่งคำตอบ');
+      return;
+    }
+
     this.socket.emit('send-answer', {
       data: {
         quizNo: this.quiz.quizNo,

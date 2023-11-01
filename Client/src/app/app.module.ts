@@ -12,6 +12,7 @@ import { QuizAdminComponent } from './components/quiz-admin/quiz-admin.component
 import { QuizAudienceComponent } from './components/quiz-audience/quiz-audience.component';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBEbQ7crvo4-gf8kve2mMqRtoupT1IJ07k",
@@ -40,7 +41,8 @@ const analytics = getAnalytics(app);
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

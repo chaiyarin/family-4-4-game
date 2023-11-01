@@ -1,41 +1,101 @@
 <title>Answer Game</title>
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-md-12">
-
+            <label for="inputName" class="form-label">เลือกชื่อของคุณก่อนเล่นเกมส์</label>
+            <ng-select [items]="nameList" bindLabel="name" bindValue="name" placeholder="เลือกชื่อของคุณ"
+                [(ngModel)]="senderName">
+            </ng-select>
         </div>
     </div>
+
     <div *ngIf="quiz; else nonQuiz">
         <div *ngIf="quiz.quizNo !== 7 && quiz.isOpen">
-            <select name="cars" id="cars" [(ngModel)]="senderName">
-                <option *ngFor="let name of nameList" value="{{name}}">{{name}}</option>
-            </select>
-            <br><br>
-            <input type="text" [(ngModel)]="answer">
-            <button (click)="sendAnswer()">ส่งคำตอบ</button>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h1 class="text-danger text-center">คำถามข้อ {{ quiz.quizNo }}</h1>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h1 class="text-danger text-center">!!! มองโจทก์คำถามบนเวที !!!</h1>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="inputAnswer" class="form-label">พิมพ์คำตอบลงในช่อง</label>
+                        <input type="text" class="form-control" id="inputAnswer" placeholder="เช่น แขน">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-primary" (click)="sendAnswer()">กดเพื่อส่งคำตอบ</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div *ngIf="quiz.quizNo == 7 && quiz.isOpen">
-            <button (click)="sendAnswerNumberAnothai(1)">1</button>
-            <button (click)="sendAnswerNumberAnothai(25)">25</button>
-            <button (click)="sendAnswerNumberAnothai(31)">31</button>
-            <button (click)="sendAnswerNumberAnothai(49)">49</button>
-            <button (click)="sendAnswerNumberAnothai(12)">12</button>
-            <button (click)="sendAnswerNumberAnothai(54)">54</button>
-            <button (click)="sendAnswerNumberAnothai(34)">34</button>
-            <button (click)="sendAnswerNumberAnothai(90)">90</button>
-            <button (click)="sendAnswerNumberAnothai(32)">32</button>
-            <button (click)="sendAnswerNumberAnothai(33)">33</button>
-            <button (click)="sendAnswerNumberAnothai(13)">13</button>
-            <button (click)="sendAnswerNumberAnothai(50)">50</button>
-            <button (click)="sendAnswerNumberAnothai(23)">23</button>
-            <button (click)="sendAnswerNumberAnothai(35)">35</button>
+        <div class="row mt-3" *ngIf="quiz.quizNo == 7 && quiz.isOpen">
+            <div class="col-md-12">
+                <h1 class="text-danger text-center">!!! นี่คือเลขที่มีความหมายกับพี่อโนทัยเป็นอย่างมาก มาเดาใจพี่โนกัน
+                    !!!</h1>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">1</button></div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">2</button></div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">3</button></div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">4</button></div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">5</button></div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">6</button></div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">7</button></div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">8</button></div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">9</button></div>
+            </div>
+            <div class="col-md-12 mt-3 mb-3">
+                <div class="d-grid gap-2"><button class="btn btn-success"
+                        (click)="sendAnswerNumberAnothai(1)">10</button></div>
+            </div>
         </div>
     </div>
 
     <ng-template #nonQuiz>
-        <div class="row">
-            <div class="col-md-12 text-center mt-5">
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
                 <h1>รอคำถามจากพิธีกร</h1>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div style="width:100%;height:0;padding-bottom:67%;position:relative;"><iframe
+                        src="https://giphy.com/embed/pKoLm8ZOPgzbq" width="100%" height="100%" style="position:absolute"
+                        frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
             </div>
         </div>
     </ng-template>
