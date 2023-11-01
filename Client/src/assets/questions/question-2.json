@@ -1,33 +1,29 @@
 {
-    "question": "คนมักชอบแอบดูข้างบ้านทำอะไร",
+    "question": "อะไรที่สามารถแตกตาม ร่างกายได้ 2",
     "choices": [
         {
-            "answer": "ทะเลาะกัน",
-            "point": 53
-        },
-        {
-            "answer": "ปาร์ตี้",
-            "point": 11
-        },
-        {
-            "answer": "รดน้ำต้นไม้",
+            "answer": "แขน",
             "point": 10
         },
         {
-            "answer": "ทำกับข้าว",
-            "point": 7
+            "answer": "ขา",
+            "point": 12
         },
         {
-            "answer": "ตากผ้า",
-            "point": 6
+            "answer": "ตา",
+            "point": 33
         },
         {
-            "answer": "ออกกำลังกาย",
-            "point": 4
+            "answer": "หู",
+            "point": 43
         },
-         {
-            "answer": "มีคนมาหา",
-            "point": 3
+        {
+            "answer": "จมูก",
+            "point": 45
+        },
+        {
+            "answer": "ปาก",
+            "point": 87
         }
     ]
 }

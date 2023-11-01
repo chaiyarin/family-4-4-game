@@ -172,6 +172,23 @@ export class AdminComponent {
     });
   }
 
+  openQRCode() {
+    this.socket.emit('send-qrcode', {
+      data: {
+        isOn: true
+      }
+    });
+  }
+
+  closeQRCode() {
+    this.socket.emit('send-qrcode', {
+      data: {
+        isOn: false
+      }
+    });
+  }
+
+
   openQuiz(quizNo: number) {
     this.socket.emit('send-quiz', {
       data: {

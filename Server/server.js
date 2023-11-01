@@ -35,6 +35,11 @@ io.on('connection', (socket) => {
         io.emit('receive-open-answer', data);
     });
 
+    socket.on('send-qrcode', (data) => {
+        console.log(data);
+        io.emit('receive-qrcode', data);
+    });
+
     socket.on('send-race-speed', (data) => {
         console.log(data);
         io.emit('receive-race-speed', data);

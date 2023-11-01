@@ -1,39 +1,29 @@
 {
-    "question": "คนไม่ชอบให้ใครมาขัดจังหว่ะเวลาทำอะไรอยู่",
+    "question": "อะไรที่สามารถแตกตาม ร่างกายได้ 2",
     "choices": [
         {
-            "answer": "นอน",
-            "point": 22
-        },
-        {
-            "answer": "คุยโทรศัพท์",
-            "point": 19
-        },
-        {
-            "answer": "เล่นเกม",
-            "point": 15
-        },
-        {
-            "answer": "ทำงาน",
-            "point": 11
-        },
-        {
-            "answer": "กินข้าว",
+            "answer": "แขน",
             "point": 10
         },
         {
-            "answer": "ดูหนัง",
-            "point": 9
+            "answer": "ขา",
+            "point": 12
         },
         {
-            "answer": "เข้าห้องน้ำ",
-            "point": 7
+            "answer": "ตา",
+            "point": 33
         },
         {
-            "answer": "อ่านหนังสือ",
-            "point": 3
+            "answer": "หู",
+            "point": 43
+        },
+        {
+            "answer": "จมูก",
+            "point": 45
+        },
+        {
+            "answer": "ปาก",
+            "point": 87
         }
- 
     ]
 }
- 

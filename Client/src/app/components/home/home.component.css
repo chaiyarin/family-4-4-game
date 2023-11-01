@@ -137,6 +137,21 @@
     /* Center vertically */
 }
 
+
+.overlay-qrcode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .overlay {
     position: fixed;
     top: 0;

@@ -28,7 +28,7 @@ import { environment } from 'src/environments/environment';
   ]
 })
 export class HomeComponent implements OnInit {
-
+  isOpenQRcode = false;
   isShowTimer: boolean = false;
   timeLeft: number = 30; // Initial countdown time in seconds
   interval: any;
@@ -102,21 +102,21 @@ export class HomeComponent implements OnInit {
     { src: 'assets/staff/68.png', title: '68' },
   ]
   images1 = [
-    { src: 'assets/staff/25.png',title: '25' },
-    { src: 'assets/staff/01.png',title: '01' },
-    { src: 'assets/staff/03.png',title: '03' },
-    { src: 'assets/staff/04.png',title: '04' },
-    { src: 'assets/staff/05.png',title: '05' },
-    { src: 'assets/staff/02.png',title: '02' },
-    { src: 'assets/staff/07.png',title: '07' },
-    { src: 'assets/staff/06.png',title: '06' },
-    { src: 'assets/staff/08.png',title: '08' },
-    { src: 'assets/staff/10.png',title: '10' },
-    { src: 'assets/staff/11.png',title: '11' },
-    { src: 'assets/staff/09.png',title: '09' },
-    { src: 'assets/staff/12.png',title: '12' },
-    { src: 'assets/staff/14.png',title: '14' },
-    { src: 'assets/staff/20.png',title: '20' },
+    { src: 'assets/staff/25.png', title: '25' },
+    { src: 'assets/staff/01.png', title: '01' },
+    { src: 'assets/staff/03.png', title: '03' },
+    { src: 'assets/staff/04.png', title: '04' },
+    { src: 'assets/staff/05.png', title: '05' },
+    { src: 'assets/staff/02.png', title: '02' },
+    { src: 'assets/staff/07.png', title: '07' },
+    { src: 'assets/staff/06.png', title: '06' },
+    { src: 'assets/staff/08.png', title: '08' },
+    { src: 'assets/staff/10.png', title: '10' },
+    { src: 'assets/staff/11.png', title: '11' },
+    { src: 'assets/staff/09.png', title: '09' },
+    { src: 'assets/staff/12.png', title: '12' },
+    { src: 'assets/staff/14.png', title: '14' },
+    { src: 'assets/staff/20.png', title: '20' },
     { src: 'assets/staff/27.png', title: '27' },
     { src: 'assets/staff/28.png', title: '28' },
     { src: 'assets/staff/29.png', title: '29' },
@@ -170,13 +170,13 @@ export class HomeComponent implements OnInit {
     { src: 'assets/staff/23.png', title: '23' },
     { src: 'assets/staff/24.png', title: '24' },
   ]
-  
+
   images2 = [
-    { src: 'assets/staff/01.png',title: '01' },
-    { src: 'assets/staff/02.png',title: '02' },
-    { src: 'assets/staff/03.png',title: '03' },
-    { src: 'assets/staff/04.png',title: '04' },
-    { src: 'assets/staff/05.png',title: '05' },
+    { src: 'assets/staff/01.png', title: '01' },
+    { src: 'assets/staff/02.png', title: '02' },
+    { src: 'assets/staff/03.png', title: '03' },
+    { src: 'assets/staff/04.png', title: '04' },
+    { src: 'assets/staff/05.png', title: '05' },
     { src: 'assets/staff/27.png', title: '27' },
     { src: 'assets/staff/28.png', title: '28' },
     { src: 'assets/staff/29.png', title: '29' },
@@ -219,26 +219,26 @@ export class HomeComponent implements OnInit {
     { src: 'assets/staff/66.png', title: '66' },
     { src: 'assets/staff/49.png', title: '49' },
     { src: 'assets/staff/68.png', title: '68' },
-    { src: 'assets/staff/06.png',title: '06' },
-    { src: 'assets/staff/07.png',title: '07' },
-    { src: 'assets/staff/08.png',title: '08' },
-    { src: 'assets/staff/09.png',title: '09' },
-    { src: 'assets/staff/10.png',title: '10' },
-    { src: 'assets/staff/11.png',title: '11' },
-    { src: 'assets/staff/12.png',title: '12' },
-    { src: 'assets/staff/13.png',title: '13' },
-    { src: 'assets/staff/14.png',title: '14' },
-    { src: 'assets/staff/15.png',title: '15' },
-    { src: 'assets/staff/16.png',title: '16' },
-    { src: 'assets/staff/17.png',title: '17' },
-    { src: 'assets/staff/18.png',title: '18' },
-    { src: 'assets/staff/19.png',title: '19' },
-    { src: 'assets/staff/20.png',title: '20' },
-    { src: 'assets/staff/21.png',title: '21' },
-    { src: 'assets/staff/22.png',title: '22' },
-    { src: 'assets/staff/23.png',title: '23' },
-    { src: 'assets/staff/24.png',title: '24' },
-    { src: 'assets/staff/25.png',title: '25' },
+    { src: 'assets/staff/06.png', title: '06' },
+    { src: 'assets/staff/07.png', title: '07' },
+    { src: 'assets/staff/08.png', title: '08' },
+    { src: 'assets/staff/09.png', title: '09' },
+    { src: 'assets/staff/10.png', title: '10' },
+    { src: 'assets/staff/11.png', title: '11' },
+    { src: 'assets/staff/12.png', title: '12' },
+    { src: 'assets/staff/13.png', title: '13' },
+    { src: 'assets/staff/14.png', title: '14' },
+    { src: 'assets/staff/15.png', title: '15' },
+    { src: 'assets/staff/16.png', title: '16' },
+    { src: 'assets/staff/17.png', title: '17' },
+    { src: 'assets/staff/18.png', title: '18' },
+    { src: 'assets/staff/19.png', title: '19' },
+    { src: 'assets/staff/20.png', title: '20' },
+    { src: 'assets/staff/21.png', title: '21' },
+    { src: 'assets/staff/22.png', title: '22' },
+    { src: 'assets/staff/23.png', title: '23' },
+    { src: 'assets/staff/24.png', title: '24' },
+    { src: 'assets/staff/25.png', title: '25' },
   ]
   displayOverlayWrongAnswer: boolean = false;
   displayOverlayStartWinner: boolean = false;
@@ -315,7 +315,10 @@ export class HomeComponent implements OnInit {
       console.log('เปิดคำตอบ', result);
       this.whatGame = result.data;
     });
-
+    this.socket.on('receive-qrcode', (result) => {
+      console.log('เปิด QRCode', result);
+      this.isOpenQRcode = result.data.isOn
+    });
     this.socket.on('receive-open-answer', (result) => {
       console.log('เปิดคำตอบ', result);
       this.toggleFlip(result.data);
@@ -451,5 +454,5 @@ export class HomeComponent implements OnInit {
     }
     return this.images;
   };
-  
+
 }

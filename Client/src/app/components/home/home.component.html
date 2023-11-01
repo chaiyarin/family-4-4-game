@@ -44,6 +44,10 @@
         <img src="assets/xmark.png" width="100%" height="100%">.
     </div>
 
+    <div *ngIf="isOpenQRcode" class="overlay-qrcode">
+        <img src="assets/qrcode.png" width="100%" height="100%">.
+    </div>
+
     <div *ngIf="displayOverlayStartWinner" class="overlay">
         <h1 style="font-size: 200px;">{{ teamWinner }}</h1>
     </div>
