@@ -70,11 +70,12 @@
 
 <div>
     <button (click)="sendStartTimmer()">เปิดตัวจับเวลาปิด เปิดคำถาม ของ Quiz</button>
-    <button>Quiz 1 เปิด 4 ต่อ 4 คำถาม 1</button>
-    <button>Quiz 2 เปิด 4 ต่อ 4 คำถาม 2</button>
-    <button>Quiz 3 เปิด 4 ต่อ 4 คำถาม 3</button>
-    <button>Quiz 4 เปิด 4 ต่อ 4 คำถาม 4</button>
-    <button>Quiz 5 เปิด Jigsaw 1</button>
-    <button>Quiz 6 เปิด Jigsaw 2</button>
-    <button>Quiz 7 เปิด คำถาม</button>
+    <button (click)="openQuiz(1)">Quiz 1 เปิด 4 ต่อ 4 คำถาม 1</button>
+    <button (click)="openQuiz(2)">Quiz 2 เปิด 4 ต่อ 4 คำถาม 2</button>
+    <button (click)="openQuiz(3)">Quiz 3 เปิด 4 ต่อ 4 คำถาม 3</button>
+    <button (click)="openQuiz(4)">Quiz 4 เปิด 4 ต่อ 4 คำถาม 4</button>
+    <button (click)="openQuiz(5)">Quiz 5 เปิด Jigsaw 1</button>
+    <button (click)="openQuiz(6)">Quiz 6 เปิด Jigsaw 2</button>
+    <button (click)="openQuiz(7)">Quiz 7 เปิด คำถาม</button>
+    <button (click)="openQuiz(0)">Lock หน้าจอคำถามไม่ให้ผู้ใช้ส่งคำตอบ</button>
 </div>

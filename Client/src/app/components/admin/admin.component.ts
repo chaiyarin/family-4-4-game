@@ -168,4 +168,13 @@ export class AdminComponent {
       }
     });
   }
+
+  openQuiz(quizNo: number) {
+    this.socket.emit('send-quiz', {
+      data: {
+        quizNo: quizNo,
+        isOpen: true,
+      }
+    });
+  }
 }

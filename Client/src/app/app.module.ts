@@ -10,6 +10,7 @@ import { TeamAComponent } from './components/team-a/team-a.component';
 import { TeamBComponent } from './components/team-b/team-b.component';
 import { HomeUserComponent } from './components/home-user/home-user.component';
 import { QuizAdminComponent } from './components/quiz-admin/quiz-admin.component';
+import { QuizAudienceComponent } from './components/quiz-audience/quiz-audience.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { QuizAdminComponent } from './components/quiz-admin/quiz-admin.component
     TeamAComponent,
     TeamBComponent,
     HomeUserComponent,
-    QuizAdminComponent
+    QuizAdminComponent,
+    QuizAudienceComponent
   ],
   imports: [
     BrowserModule,
