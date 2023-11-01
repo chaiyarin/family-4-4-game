@@ -1,1 +1,19 @@
-<p>quiz-admin works!</p>
+<title>Calculate Point</title>
+<div>
+    <h1>หน้าจอตรวจคำตอบ</h1>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <th>ข้อ</th>
+            <th>คนตอบ</th>
+            <th>คำตอบ</th>
+        </tr>
+        <tr *ngFor="let answer of answers">
+            <td>{{ answer.quizNo }}</td>
+            <td>{{ answer.sender }}</td>
+            <td>{{ answer.answer }}</td>
+        </tr>
+    </table>
+</div>

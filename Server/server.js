@@ -60,6 +60,10 @@ io.on('connection', (socket) => {
         io.emit('receive-quiz', data);
     });
 
+    socket.on('send-answer', (data) => {
+        io.emit('receive-answer', data);
+    });
+
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });

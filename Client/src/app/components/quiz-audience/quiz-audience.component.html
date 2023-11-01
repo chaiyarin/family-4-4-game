@@ -1,23 +1,18 @@
-<div *ngIf="quiz">
-    <div *ngIf="quiz.quizNo === 1 && quiz.isOpen">
-        สามารถตอบคำถามข้อ 1 ได้
+<title>Answer Game</title>
+<div *ngIf="quiz; else nonQuiz">
+    <div *ngIf="quiz.quizNo !== 7 && quiz.isOpen">
+        <select name="cars" id="cars" [(ngModel)]="senderName">
+            <option *ngFor="let name of nameList" value="{{name}}">{{name}}</option>
+        </select>
+        <br><br>
+        <input type="text" [(ngModel)]="answer">
+        <button (click)="sendAnswer()">ส่งคำตอบ</button>
     </div>
-    <div *ngIf="quiz.quizNo === 2 && quiz.isOpen">
-        สามารถตอบคำถามข้อ 2 ได้
-    </div>
-    <div *ngIf="quiz.quizNo === 3 && quiz.isOpen">
-        สามารถตอบคำถามข้อ 3 ได้
-    </div>
-    <div *ngIf="quiz.quizNo === 4 && quiz.isOpen">
-        สามารถตอบคำถามข้อ 4 ได้
-    </div>
-    <div *ngIf="quiz.quizNo === 5 && quiz.isOpen">
-        สามารถตอบคำถามข้อ 5 ได้
-    </div>
-    <div *ngIf="quiz.quizNo === 6 && quiz.isOpen">
-        สามารถตอบคำถามข้อ 6 ได้
-    </div>
-    <div *ngIf="quiz.quizNo === 7 && quiz.isOpen">
-        สามารถตอบคำถามข้อ 6 ได้
+    <div *ngIf="quiz.quizNo == 7 && quiz.isOpen">
+        <button (click)="sendAnswerNumberAnothai(1)">1</button>
     </div>
 </div>
+
+<ng-template #nonQuiz>
+    <h1>รอคำถามจากพิธีกร</h1>
+</ng-template>

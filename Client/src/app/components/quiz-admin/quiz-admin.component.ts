@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { io } from 'socket.io-client';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-quiz-admin',
   templateUrl: './quiz-admin.component.html',
   styleUrls: ['./quiz-admin.component.css']
 })
-export class QuizAdminComponent {
+export class QuizAdminComponent implements OnInit {
+
+  socket;
+  answers: any[] = [];
+
+  constructor() {
+    this.socket = io(environment.apiUrl);
+  }
+
+
+  ngOnInit(): void {
+    this.socket.on('receive-answer', (result) => {
+      this.answers.push(result.data);
+    });
+  }
 
 }
