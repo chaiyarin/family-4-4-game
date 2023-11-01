@@ -150,6 +150,9 @@ export class AdminComponent {
     if (game === 'ramdonNumber') {
       this.socket.emit('send-game', { data: { game: game, image: this.imageUrl } });
     }
+    if (game === 'randomGame') {
+      this.socket.emit('send-game', { data: { game: game, image: this.imageUrl } });
+    }
   }
 
   random() {

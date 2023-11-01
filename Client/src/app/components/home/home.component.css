@@ -223,3 +223,40 @@
     font-size: 13rem;
     font-weight: bold;
 }
+
+.flex-item {
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: left 4s ease-out;
+}
+
+.flex-center {
+    display:flex;
+    position: absolute;
+    left: 50%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: red;
+}
+
+.item {
+    margin: 20px;
+}
+
+img {
+    border-radius: 5px;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: red;
+  }

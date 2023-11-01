@@ -65,3 +65,29 @@
 <div class="countdown-timer" class="overlay-timer" *ngIf="isShowTimer">
     <div class="timer">{{ timeLeft }} seconds</div>
 </div>
+
+<div  *ngIf="whatGame.game === 'randomGame'">
+    <div>สุ่มผู้โชคดี</div>
+    <div class="flex-container" >
+    
+        <div  class="flex-item" *ngIf="isShowRandom" >
+            <div class="item" *ngFor="let image of images;let i = index" >
+                    <img [src]="image.src" width="700px" height="400px">
+            </div>
+        </div>
+        <div  class="flex-item" *ngIf="isShowRandom1" >
+            <div class="item" *ngFor="let image of images1;let i = index" >
+                    <img [src]="image.src" width="700px" height="400px">
+            </div>
+        </div>
+        <div  class="flex-item" *ngIf="isShowRandom2" >
+            <div class="item" *ngFor="let image of images2;let i = index" >
+                    <img [src]="image.src" width="700px" height="400px">
+            </div>
+        </div>    
+        <div class="flex-center " *ngIf="isShowRandom || isShowRandom1 || isShowRandom2">
+            คนที่ได้รับเลือก
+        </div>    
+    </div>    
+</div>
+
