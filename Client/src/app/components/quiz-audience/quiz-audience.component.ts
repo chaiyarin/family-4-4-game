@@ -108,6 +108,7 @@ export class QuizAudienceComponent implements OnInit {
       }
     });
     this.quiz = null;
+    this.answer = '';
   }
 
   sendAnswerNumberAnothai(anothaiNumber: number): void {
