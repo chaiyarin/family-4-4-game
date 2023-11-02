@@ -54,7 +54,6 @@ export class HomeComponent implements OnInit {
     { src: 'assets/randomgame/19.png', title: '19' },
     { src: 'assets/randomgame/20.png', title: '20' },
     { src: 'assets/randomgame/21.png', title: '21' },
-    { src: 'assets/randomgame/22.png', title: '22' },
     { src: 'assets/randomgame/23.png', title: '23' },
     { src: 'assets/randomgame/24.png', title: '24' },
     { src: 'assets/randomgame/25.png', title: '25' },
@@ -132,7 +131,6 @@ export class HomeComponent implements OnInit {
     { src: 'assets/randomgame/17.png', title: '17' },
     { src: 'assets/randomgame/18.png', title: '18' },
     { src: 'assets/randomgame/21.png', title: '21' },
-    { src: 'assets/randomgame/22.png', title: '22' },
     { src: 'assets/randomgame/23.png', title: '23' },
     { src: 'assets/randomgame/24.png', title: '24' },
     { src: 'assets/randomgame/26.png', title: '26' },
@@ -209,7 +207,6 @@ export class HomeComponent implements OnInit {
     { src: 'assets/randomgame/17.png', title: '17' },
     { src: 'assets/randomgame/18.png', title: '18' },
     { src: 'assets/randomgame/21.png', title: '21' },
-    { src: 'assets/randomgame/22.png', title: '22' },
     { src: 'assets/randomgame/23.png', title: '23' },
     { src: 'assets/randomgame/24.png', title: '24' },
     { src: 'assets/randomgame/26.png', title: '26' },
@@ -435,7 +432,7 @@ export class HomeComponent implements OnInit {
       } else {
         this.isShowRandom2 = true;
       }
-      const duration = 5000;
+      const duration = 8000;
       if (symbolsContainer) {
         symbolsContainer.style.left = `-16000px`;
         this.disableButton = true;

@@ -249,7 +249,7 @@
     display: flex;
     position: relative;
     left: 0;
-    transition: left 4s ease-out;
+    transition: left 8s ease-out;
 }
 
 .flex-center {

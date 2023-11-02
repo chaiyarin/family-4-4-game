@@ -118,10 +118,18 @@
 
 <div class="group">
   <h1>สุ่มผู้โชคดี</h1>
+
+  <div>
+    <button class="p-2" (click)="openRandom('')">Open Random 1</button>
+    <button class="p-2" (click)="openRandom('PTum')">Open Random 2</button>
+    <button class="p-2" (click)="openRandom('PPa')">Open Random 3</button>
+  </div>
+  <div>
+    <button class="p-2" (click)="random('')">Random 1</button>
+    <button class="p-2" (click)="random('PTum')">Random 2</button>
+    <button class="p-2" (click)="random('PPa')">Random 3</button>
+  </div>
   <button class="p-2" (click)="openGame('randomGame')">เกมลุ้นโชค</button>
-  <button class="p-2" (click)="random()">Random 1</button>
-  <button class="p-2" (click)="randomPTum()">Random 2</button>
-  <button class="p-2" (click)="randomPPa()">Random 3</button>
 </div>
 
 

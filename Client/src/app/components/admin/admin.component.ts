@@ -22,7 +22,6 @@ export class AdminComponent {
   scoreTeamA: number = 0;
   scoreTeamB: number = 0;
   private audio = new Audio();
-
   constructor() {
     this.socket = io(environment.apiUrl);
   }
@@ -155,15 +154,15 @@ export class AdminComponent {
     }
   }
 
-  random() {
-    this.socket.emit('send-random', { data: '' });
+  openRandom(fixPerson : string) {
+    this.socket.emit('send-random', { data: fixPerson });
   }
-  randomPTum() {
-    this.socket.emit('send-random', { data: 'PTum' });
+  
+  random(fixPerson : string) {
+    this.playSoundRandomGame();
+    this.socket.emit('send-random', { data: fixPerson });
   }
-  randomPPa() {
-    this.socket.emit('send-random', { data: 'PPa' });
-  }
+ 
   sendStartTimmer() {
     this.socket.emit('send-timer', {
       data: {
@@ -203,5 +202,11 @@ export class AdminComponent {
         isOpen: true,
       }
     });
+  }
+
+  playSoundRandomGame() {
+    this.audio.src = 'assets/music/randomgame.mp3';
+    this.audio.load();
+    this.audio.play();
   }
 }
