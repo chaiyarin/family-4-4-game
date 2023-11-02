@@ -83,6 +83,21 @@
       <button class="p-2" (click)="playSoundWinner()">เสียงทีมชนะตอนจบ</button>
     </div>
   </div>
+  <div>
+    <div>
+      <div *ngIf="question">
+        <div>
+          <h1>{{ question.question }}</h1>
+        </div>
+        <div *ngFor="let q of question.choices; index as i">
+          <div>
+            {{ i }} : {{ q.answer }}
+            <button class="p-2" (click)="sendOpenAnswer(i)">เปิดป้าย</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="group">
@@ -109,14 +124,4 @@
   <button class="p-2" (click)="randomPPa()">Random 3</button>
 </div>
 
-<div *ngIf="question">
-  <div>
-    <h1>{{ question.question }}</h1>
-  </div>
-  <div *ngFor="let q of question.choices; index as i">
-    <div>
-      {{ i }} : {{ q.answer }}
-      <button class="p-2" (click)="sendOpenAnswer(i)">เปิดป้าย</button>
-    </div>
-  </div>
-</div>
+
