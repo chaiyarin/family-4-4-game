@@ -1,29 +1,33 @@
 {
-    "question": "อะไรที่สามารถแตกตาม ร่างกายได้ 2",
+    "question": "เสียงอะไรจากห้องข้างๆ ที่เราไม่อยากได้ยินตอนกลางคืน",
     "choices": [
         {
-            "answer": "แขน",
-            "point": 10
+            "answer": "คนทะเลาะกัน",
+            "point": 31
         },
         {
-            "answer": "ขา",
+            "answer": "เพลง",
+            "point": 17
+        },
+        {
+            "answer": "ร้องไห้",
             "point": 12
         },
         {
-            "answer": "ตา",
-            "point": 33
+            "answer": "ทำกับข้าว",
+            "point": 10
         },
         {
-            "answer": "หู",
-            "point": 43
+            "answer": "คนคุยกัน",
+            "point": 8
         },
         {
-            "answer": "จมูก",
-            "point": 45
+            "answer": "คนจู๋จี๋",
+            "point": 6
         },
-        {
-            "answer": "ปาก",
-            "point": 87
+         {
+            "answer": "เสียงสวดมนต์",
+            "point": 3
         }
     ]
 }
