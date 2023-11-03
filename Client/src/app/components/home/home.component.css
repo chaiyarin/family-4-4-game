@@ -304,3 +304,11 @@ img {
     padding: 10px;
     background-color: red;
 }
+
+.random-number-item {
+    background-color: orange;   
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+    text-align: center;
+}
