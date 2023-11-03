@@ -409,6 +409,10 @@ export class HomeComponent implements OnInit {
   }
 
   revealCard(card: any): void {
+    const audio = new Audio();
+    audio.src = 'assets/music/openjigsaw.mp3';
+    audio.load();
+    audio.play();
     card.revealed = true;
   }
 
