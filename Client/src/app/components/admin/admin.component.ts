@@ -204,6 +204,33 @@ export class AdminComponent {
     });
   }
 
+  playSoundOpenPitigon() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/openPitigon.mp3';
+    this.audio.load();
+    this.audio.play();
+  }
+
+  playSoundWinnerFarlab() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/winnerFarlab.mp3';
+    this.audio.load();
+    this.audio.play();
+  }
+
+  playSoundAward() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/award.mp3';
+    this.audio.load();
+    this.audio.play();
+  }
+  playSoundOpenAward() {
+    const audio = new Audio();
+    this.audio.src = 'assets/music/openAward.mp3';
+    this.audio.load();
+    this.audio.play();
+  }
+
   playSoundRandomGame() {
     this.audio.src = 'assets/music/randomgame.mp3';
     this.audio.load();
