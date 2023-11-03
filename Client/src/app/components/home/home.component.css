@@ -143,6 +143,29 @@
     /* Center vertically */
 }
 
+.overlay-2 {
+    position: fixed;
+    /* This will make the div fixed and cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Viewport width */
+    height: 100vh;
+    /* Viewport height */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black background with 70% opacity */
+    color: white;
+    /* Text color */
+    z-index: 1000;
+    /* This ensures the overlay is on top of other content */
+    display: flex;
+    /* Flexbox for centering content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
 
 .overlay-qrcode {
     position: fixed;
@@ -253,7 +276,7 @@
 }
 
 .flex-center {
-    display:flex;
+    display: flex;
     position: absolute;
     left: 50%;
     border-radius: 10px;
@@ -269,15 +292,15 @@ img {
     border-radius: 5px;
 }
 
-#text{
+#text {
     position: absolute;
     top: 50%;
     left: 50%;
     font-size: 50px;
     color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     border-radius: 5px;
     padding: 10px;
     background-color: red;
-  }
+}

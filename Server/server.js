@@ -69,6 +69,11 @@ io.on('connection', (socket) => {
         io.emit('receive-answer', data);
     });
 
+    socket.on('send-winner', (data) => {
+        console.log(data);
+        io.emit('receive-winner', data);
+    });
+
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });

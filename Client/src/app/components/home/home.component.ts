@@ -166,7 +166,7 @@ export class HomeComponent implements OnInit {
     { src: 'assets/randomgame/52.png', title: '52' },
     { src: 'assets/randomgame/53.png', title: '53' },
 
-  
+
   ]
 
   images2 = [
@@ -254,6 +254,8 @@ export class HomeComponent implements OnInit {
   isShowRandom1 = false;
   isShowRandom2 = false;
   disableButton = false;
+  winnerName = '';
+  isOpenWinnerModal: boolean = false;
   constructor() {
     this.socket = io(environment.apiUrl);
     this.socket.on('receive-random', (result) => {
@@ -264,6 +266,7 @@ export class HomeComponent implements OnInit {
       console.log(result);
       if (result.data === 0) {
         this.timeLeft = 20;
+        this.isOpenWinnerModal = false;
         this.pressWinner = false;
         this.question = null;
         this.teamAWrongAnswers = [];
@@ -318,6 +321,13 @@ export class HomeComponent implements OnInit {
     this.socket.on('receive-open-answer', (result) => {
       console.log('เปิดคำตอบ', result);
       this.toggleFlip(result.data);
+    });
+
+    this.socket.on('receive-winner', (result) => {
+      console.log(13123213);
+      console.log(result);
+    this.isOpenWinnerModal = result.data.isOpenWinnerModal;
+      this.winnerName = result.data.name;
     });
 
     this.socket.on('receive-incorrect-answer', (result) => {
